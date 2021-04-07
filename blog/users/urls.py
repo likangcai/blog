@@ -8,6 +8,7 @@
 # 进行users子应用的视图路由
 from django.urls import path
 from users.views import RegisterView, ImageCodeView
+from users.views import SmsCodeView
 
 urlpatterns = [
     # path的第一个参数，路由
@@ -16,4 +17,7 @@ urlpatterns = [
 
     # 图片验证码的路由
     path('imagecode/', ImageCodeView.as_view(), name='imagecode'),
+
+    # 短信验证码路由
+    path('smscode/', SmsCodeView.as_view(), name='smscode'),
 ]
