@@ -9,6 +9,11 @@ from users.models import User
 from django.db import DatabaseError
 from django.shortcuts import redirect
 from django.urls import reverse
+from django.contrib.auth import login
+from django.http import HttpResponseBadRequest
+from libs.captcha.captcha import captcha
+from django_redis import get_redis_connection
+from django.http import HttpResponse
 
 
 # 注册视图
@@ -64,18 +69,22 @@ class RegisterView(View):
         except DatabaseError as e:
             logger.info(e)
             return HttpResponseBadRequest('注册失败')
+
+        # 登录状态保持
+        login(request, user)
+
         # 4.返回响应跳转到指定页面
         # 暂时返回一个注册成功的页面
         # return HttpResponseBadRequest('注册成功，重定向到首页')
         # redirect 进行重定向
         # reverse 是可以通过 namespace:name 来获取到试图对应的路由
-        return redirect(reverse('home:index'))
+        response = redirect(reverse('home:index'))
+        # 设置cookie信息，以方便首页中，用户信息的展示和判断
+        response.set_cookie('is_login', True)
+        response.set_cookie('username', user.username, max_age=7 * 24 * 3600)
+        return response
 
 
-from django.http import HttpResponseBadRequest
-from libs.captcha.captcha import captcha
-from django_redis import get_redis_connection
-from django.http import HttpResponse
 
 
 class ImageCodeView(View):
