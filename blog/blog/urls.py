@@ -37,6 +37,8 @@ urlpatterns = [
     # urlconf_module 子应用的路由
     # app_name 子应用的名字
     # namespace 命名空间
-    path('', include(('users.urls', 'users'), namespace='users'))
+    path('', include(('users.urls', 'users'), namespace='users')),
     # path('', log),
+    path('', include(('home.urls', 'home'), namespace='home')),
+
 ]
