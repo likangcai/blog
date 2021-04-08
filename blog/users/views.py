@@ -3,12 +3,67 @@ from django.shortcuts import render
 # Create your views here.
 
 from django.views import View
-
+from django.http.response import HttpResponseBadRequest
+import re
+from users.models import User
+from django.db import DatabaseError
 
 # 注册视图
 class RegisterView(View):
     def get(self, request):
         return render(request, 'register.html')
+
+    def post(self, request):
+        """
+        1.接收数据
+        2.验证数据
+            2.1参数是否齐全
+            2.2手机号的格式是否正确
+            2.3密码是否符合格式
+            2.4密码和确认密码要一致
+            2.5短信验证码是否和redis中的一致
+        3.保存注册信息
+        4.返回响应跳转到指定页面
+        :param request:
+        :return:
+        """
+        # 1.接收数据
+        mobile = request.POST.get('mobile')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+        smscode = request.POST.get('sms_code')
+        # 2.验证数据
+        #   2.1参数是否齐全
+        if not all([mobile, password, password2, smscode]):
+            return HttpResponseBadRequest('缺少必要的参数')
+        #   2.2手机号的格式是否正确
+        if not re.match(r'^1[3-9]\d{9}$', mobile):
+            return HttpResponseBadRequest('手机号输入错误')
+        #   2.3密码是否符合格式
+        if not re.match(r'^[0-9A-Za-z]{8,20}$', password):
+            return HttpResponseBadRequest('请输入8到20位的密码，密码是数字,字母')
+        #   2.4密码和确认密码要一致
+        if password != password2:
+            return HttpResponseBadRequest('两次密码输入不一致')
+        #   2.5短信验证码是否和redis中的一致
+        redis_conn = get_redis_connection('default')
+        redis_sms_code = redis_conn.get('sms:%s' % mobile)
+        if redis_sms_code is None:
+            return HttpResponseBadRequest('短信验证码已过期')
+        if smscode != redis_sms_code.decode():
+            return HttpResponseBadRequest('短信验证码不一致')
+        # 3.保存注册信息
+        # create_user  可以使用系统的方法来对密码进行加密
+        try:
+            user = User.objects.create_user(username=mobile,
+                                            mobile=mobile,
+                                            password=password)
+        except DatabaseError as e:
+            logger.info(e)
+            return HttpResponseBadRequest('注册失败')
+        # 4.返回响应跳转到指定页面
+        # 暂时返回一个注册成功的页面
+        return HttpResponseBadRequest('注册成功，重定向到首页')
 
 
 from django.http import HttpResponseBadRequest
