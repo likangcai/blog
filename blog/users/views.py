@@ -1,10 +1,8 @@
+import logging
+import re
 from django.shortcuts import render
-
-# Create your views here.
-
 from django.views import View
 from django.http.response import HttpResponseBadRequest
-import re
 from users.models import User
 from django.db import DatabaseError
 from django.shortcuts import redirect
@@ -14,7 +12,13 @@ from django.http import HttpResponseBadRequest
 from libs.captcha.captcha import captcha
 from django_redis import get_redis_connection
 from django.http import HttpResponse
+from django.http.response import JsonResponse
+from utils.response_code import RETCODE
+from random import randint
+from libs.yuntongxun.sms import CCP
 
+
+# Create your views here.
 
 # 注册视图
 class RegisterView(View):
@@ -85,8 +89,6 @@ class RegisterView(View):
         return response
 
 
-
-
 class ImageCodeView(View):
     def get(self, request):
         """
@@ -116,13 +118,7 @@ class ImageCodeView(View):
         return HttpResponse(image, content_type='image/jpeg')
 
 
-from django.http.response import JsonResponse
-from utils.response_code import RETCODE
-import logging
-
 logger = logging.getLogger('django')
-from random import randint
-from libs.yuntongxun.sms import CCP
 
 
 class SmsCodeView(View):
