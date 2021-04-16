@@ -16,6 +16,7 @@ from django.http.response import JsonResponse
 from utils.response_code import RETCODE
 from random import randint
 from libs.yuntongxun.sms import CCP
+from django.contrib.auth import logout
 
 
 # Create your views here.
@@ -227,14 +228,26 @@ class LoginView(View):
         if remember != 'no':  # 没有记住用户信息
             # 浏览器关闭之后
             request.session.set_expiry(0)
-            response.set_cookie('is_login',True)
-            response.set_cookie('username',user.username,max_age=14*24*3600)
+            response.set_cookie('is_login', True)
+            response.set_cookie('username', user.username, max_age=14 * 24 * 3600)
 
         else:  # 记住用户信息
             # 默认是记住 2周
             request.session.set_expiry(None)
-            response.set_cookie('is_login',True,max_age=14*24*3600)
-            response.set_cookie('username',user.username,max_age=14*24*3600)
+            response.set_cookie('is_login', True, max_age=14 * 24 * 3600)
+            response.set_cookie('username', user.username, max_age=14 * 24 * 3600)
 
         # 7.返回响应
+        return response
+
+
+class LogoutView(View):
+
+    def get(self, request):
+        # 1.session数据清除
+        logout(request)
+        # 2.cookie数据的部分删除
+        response = redirect(reverse('home:index'))
+        response.delete_cookie('is_login')
+        # 3.跳转到首页
         return response
