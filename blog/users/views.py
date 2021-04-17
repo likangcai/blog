@@ -145,35 +145,36 @@ class SmsCodeView(View):
         mobile = request.GET.get('mobile')
         image_code = request.GET.get('image_code')
         uuid = request.GET.get('uuid')
-        #         2.参数的验证
-        #             2.1验证参数是否齐全
+        # 2.参数的验证
+        #   2.1验证参数是否齐全
         if not all([mobile, image_code, uuid]):
             return JsonResponse({'code': RETCODE.NECESSARYPARAMERR, 'errmsg': '缺少必要的参数'})
-        #             2.2图片验证码验证
-        #                 连接redis,获取redis中的图片验证码
+        #   2.2图片验证码验证
+        # 连接redis,获取redis中的图片验证码
         redis_conn = get_redis_connection('default')
         redis_image_code = redis_conn.get('img:%s' % uuid)
-        #                 判断图片验证码是否存在
+        # 判断图片验证码是否存在
         if redis_image_code is None:
             return JsonResponse({'code': RETCODE.IMAGECODEERR, 'errmsg': '图片验证码已过期'})
-        #                 如果验证码未过期，我们获取到之后就可以删除图片验证码
+        # 如果验证码未过期，我们获取到之后就可以删除图片验证码
 
         try:
             redis_conn.delete('img:%s' % uuid)
         except Exception as e:
             logger.error(e)
-        #                 比对图片验证码 注意大小写的问题，redis的数据是bytes类型
+        # 比对图片验证码 注意大小写的问题，redis的数据是bytes类型
         if redis_image_code.decode().lower() != image_code.lower():
             return JsonResponse({'code': RETCODE.IMAGECODEERR, 'errmsg': '图片验证码错误'})
-        #         3.生成短信验证码
+        # 3.生成短信验证码
         sms_code = '%06d' % randint(0, 999999)
         # 为了后期比对方便，我们可以将短信验证码记录在日志中
         logger.info(sms_code)
-        #         4.保存图片验证码到redis中
+
+        # 4.保存图片验证码到redis中
         redis_conn.setex('sms:%s' % mobile, 300, sms_code)
-        #         5.发送短信
+        # 5.发送短信
         CCP().send_template_sms(mobile, [sms_code, 5], 1)
-        #         6.返回响应
+        # 6.返回响应
         return JsonResponse({'code': RETCODE.OK, 'errmsg': '短信发送成功'})
 
 
@@ -257,3 +258,67 @@ class ForgetPasswordView(View):
 
     def get(self, request):
         return render(request, 'forget_password.html')
+
+    def post(self, request):
+        """
+        1.接收数据
+        2.验证数据
+            2.1判断参数是否齐全
+            2.2手机号是否符合规则
+            2.3判断密码是否符合规则
+            2.4判断确认密码和密码是否一致
+            2.5判断短信验证码是否一致
+        3.根据手机号进行用户信息查询
+        4.如果手机查询到手机号信息则进行密码的修改
+        5.如果手机号没有查询出用户信息，则进行新用户创建
+        6.进行页面跳转，跳转到登录页面
+        7.返回响应
+        :param request:
+        :return:
+        """
+
+        # 1.接收数据
+        mobile = request.POST.get('mobile')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+        smscode = request.POST.get('sms_code')
+        # 2.验证数据
+        #     2.1判断参数是否齐全
+        if not all([mobile, password, password2, smscode]):
+            return HttpResponseBadRequest('参数信息不全')
+        #     2.2手机号是否符合规则
+        if not re.match(r'^1[3-9]\d{9}$', mobile):
+            return HttpResponseBadRequest('手机号不符合规则')
+        #     2.3判断密码是否符合规则
+        if not re.match(r'^[0-9A-Za-z]{8,20}$', password):
+            return HttpResponseBadRequest('密码不符合规则')
+        #     2.4判断确认密码和密码是否一致
+        if password != password2:
+            return HttpResponseBadRequest('密码不一致')
+        #     2.5判断短信验证码是否一致
+        redis_conn = get_redis_connection('default')
+        redis_sms_code = redis_conn.get('sms:%s' % mobile)
+        if redis_sms_code is None:
+            return HttpResponseBadRequest('短信验证码已经过期')
+        if redis_sms_code.decode() != smscode:
+            return HttpResponseBadRequest('短信验证码错误')
+        # 3.根据手机号进行用户信息查询
+        try:
+            user = User.objects.get(mobile=mobile)
+        except User.DoesNotExist:
+            # 5.如果手机号没有查询出用户信息，则进行新用户创建
+            try:
+                User.objects.create_user(username=mobile,
+                                         mobile=mobile,
+                                         password=password)
+            except Exception:
+                return HttpResponseBadRequest('修改失败，请稍后重试')
+        else:
+            # 4.如果手机查询到手机号信息则进行密码的修改
+            user.set_password(password)
+            # 注意保存用户信息
+            user.save()
+        # 6.进行页面跳转，跳转到登录页面
+        response = redirect(reverse('users:login'))
+        # 7.返回响应
+        return response
