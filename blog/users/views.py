@@ -17,6 +17,7 @@ from utils.response_code import RETCODE
 from random import randint
 from libs.yuntongxun.sms import CCP
 from django.contrib.auth import logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -225,7 +226,14 @@ class LoginView(View):
         login(request, user)
         # 5.根据用户选择的是否记住登录状态来进行判断
         # 6.为了首页显示我们需要设置一些cookie信息
-        response = redirect(reverse('home:index'))
+
+        # 根据next参数判断进行页面跳转
+        next_page = request.GET.get('next')
+        if next_page:
+            response = redirect(next_page)
+        else:
+            response = redirect(reverse('home:index'))
+
         if remember != 'no':  # 没有记住用户信息
             # 浏览器关闭之后
             request.session.set_expiry(0)
@@ -324,7 +332,20 @@ class ForgetPasswordView(View):
         return response
 
 
-class UserCenterView(View):
+# LoginRequiredMixin
+# 如果系统没有登录，会进行默认的调整
+# 默认的跳转连接：accounts/login/?next=xxx
+class UserCenterView(LoginRequiredMixin, View):
 
     def get(self, request):
-        return render(request, 'center.html')
+        # 获得登录用户的信息
+        user = request.user
+        # 组织获取用户的信息
+        context = {
+            'username': user.username,
+            'model': user.mobile,
+            'avatar': user.avatar if user.avatar else None,  # 判断用户头像存在，否则返回 None
+            'user_desc': user.user_desc
+        }
+
+        return render(request, 'center.html', context=context)
