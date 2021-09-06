@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 # 1.导入系统的LOGGING
 # import logging
@@ -42,3 +44,7 @@ urlpatterns = [
     path('', include(('home.urls', 'home'), namespace='home')),
 
 ]
+
+# 图片访问的路由
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # 这句话是用来指定和映射静态文件的路径

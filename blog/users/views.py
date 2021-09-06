@@ -73,7 +73,7 @@ class RegisterView(View):
                                             mobile=mobile,
                                             password=password)
         except DatabaseError as e:
-            logger.info(e)
+            logger.error(e)
             return HttpResponseBadRequest('注册失败')
 
         # 登录状态保持
@@ -108,7 +108,7 @@ class ImageCodeView(View):
         # 2.判断uuid是否获取到
         if uuid is None:
             return HttpResponseBadRequest('没有传递uuid')
-        # 3.通过调用captcha来生成图片（图片和二进制和图片内容）
+        # 3.通过调用captcha来生成图片（图片二进制和图片内容）
         text, image = captcha.generate_captcha()
         # 4.将图片内容保存到redis中 uuid作为一个key, 图片内容作为一个value 同时我们还需要设置一个时效
         redis_conn = get_redis_connection('default')
@@ -343,9 +343,41 @@ class UserCenterView(LoginRequiredMixin, View):
         # 组织获取用户的信息
         context = {
             'username': user.username,
-            'model': user.mobile,
+            'mobile': user.mobile,
             'avatar': user.avatar if user.avatar else None,  # 判断用户头像存在，否则返回 None
             'user_desc': user.user_desc
         }
 
         return render(request, 'center.html', context=context)
+
+    def post(self, request):
+        """
+        1.接收参数
+        2.将参数保存起来
+        3.更新cookie中的username信息
+        4.刷新当前页面（重定向操作）
+        5.返回响应
+        :param request:
+        :return:
+        """
+        user = request.user
+        # 1.接收参数
+        username = request.POST.get('username', user.username)
+        user_desc = request.POST.get('desc', user.user_desc)
+        avatar = request.FILES.get('avatar')
+        # 2.将参数保存
+        try:
+            user.username = username
+            user.user_desc = user_desc
+            if avatar:
+                user.avatar = avatar
+            user.save()
+        except Exception as e:
+            logger.error(e)
+            return HttpResponseBadRequest('修改失败请稍后再试')
+        # 3.跟新cookie信息
+        # 4.刷新当前页面（重定向）
+        response = redirect(reverse('users:center'))
+        response.set_cookie('username', user.username, max_age=14 * 24 * 3600)
+        # 5.返回响应
+        return response

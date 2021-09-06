@@ -4,7 +4,6 @@
 # @Time    : 2021-04-03 15:09
 # @Software: PyCharm
 # @File    : urls.py
-
 # 进行users子应用的视图路由
 from django.urls import path
 from users.views import RegisterView, ImageCodeView

@@ -33,7 +33,7 @@
             <li class="nav-item dropdown" v-if="is_login">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" @click="show_menu_click">[[username]]</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="display: block" v-show="show_menu">
-                    <a class="dropdown-item" href="{% static 'write_blog.html' %}">写文章</a>
+                    <a class="dropdown-item" href="../static/write_blog.html">写文章</a>
                     <a class="dropdown-item" href='{% url 'users:center' %}'>个人信息</a>
                     <a class="dropdown-item" href='{% url 'users:logout' %}'>退出登录</a>
                 </div>
@@ -53,6 +53,7 @@
             <div class="col-12">
                 <br>
                 <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                     <!-- username -->
                 <div class="form-group col-md-4">
                     <label for="username">用户名</label>
@@ -75,7 +76,7 @@
                     <!-- phone -->
                     <div class="form-group col-md-4">
                         <label for="phone">电话</label>
-                        <input type="text" class="form-control" disabled="disabled" id="phone" name="phone" value="{{mobile}}">
+                        <input type="text" class="form-control" disabled="disabled" id="phone" name="phone" value="{{ mobile }}">
                     </div>
                     <!-- desc -->
                     <div class="form-group col-md-4">

@@ -64,6 +64,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 添加这一行，可以理解为中间件的意思
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -202,3 +204,11 @@ AUTH_USER_MODEL = 'users.User'
 
 # 修改系统的未登录跳转连接
 LOGIN_URL = '/login/'
+
+# 设置上传的图片 保存到media目录下
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/').replace('\\', '/')  # .replace('\\', '/')设置静态文件路径为主目录下的media文件夹
+
+# 设置图片访问的统一路由
+MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'  # url映射
