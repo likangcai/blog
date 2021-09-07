@@ -1,0 +1,35 @@
+INFO 2021-09-07 22:46:21,124 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-07 22:46:28,537 basehttp 161 "GET / HTTP/1.1" 200 12746
+INFO 2021-09-07 22:46:28,617 basehttp 161 "GET /static/md_css/monokai.css HTTP/1.1" 200 4118
+INFO 2021-09-07 22:46:28,617 basehttp 161 "GET /static/common/common.css HTTP/1.1" 200 381
+INFO 2021-09-07 22:46:28,619 basehttp 161 "GET /static/common/jquery.pagination.css HTTP/1.1" 200 549
+INFO 2021-09-07 22:46:28,636 basehttp 161 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2021-09-07 22:46:28,647 basehttp 161 "GET /static/js/vue-2.5.16.js HTTP/1.1" 200 300254
+INFO 2021-09-07 22:46:28,652 basehttp 161 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 200 12949
+INFO 2021-09-07 22:46:28,653 basehttp 161 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97168
+INFO 2021-09-07 22:46:28,693 basehttp 161 "GET /static/js/host.js HTTP/1.1" 200 35
+INFO 2021-09-07 22:46:28,703 basehttp 161 "GET /static/js/common.js HTTP/1.1" 200 919
+INFO 2021-09-07 22:46:28,709 basehttp 161 "GET /static/js/index.js HTTP/1.1" 200 552
+INFO 2021-09-07 22:46:28,717 basehttp 161 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 200 2935
+INFO 2021-09-07 22:46:28,725 basehttp 161 "GET /static/img/1.jpg HTTP/1.1" 200 78682
+WARNING 2021-09-07 22:46:30,393 log 224 Not Found: /favicon.ico
+WARNING 2021-09-07 22:46:30,394 basehttp 161 "GET /favicon.ico HTTP/1.1" 404 3779
+INFO 2021-09-07 22:46:32,117 basehttp 161 "GET /login/ HTTP/1.1" 200 3197
+INFO 2021-09-07 22:46:32,191 basehttp 161 "GET /static/js/login.js HTTP/1.1" 200 710
+INFO 2021-09-07 22:46:35,074 basehttp 161 "POST /login/ HTTP/1.1" 302 0
+INFO 2021-09-07 22:46:35,110 basehttp 161 "GET / HTTP/1.1" 200 12746
+INFO 2021-09-07 22:46:40,973 basehttp 161 "GET /writeblog/ HTTP/1.1" 200 6030
+INFO 2021-09-07 22:46:41,205 basehttp 161 "GET /static/js/write_blog.js HTTP/1.1" 200 521
+INFO 2021-09-07 22:46:41,205 basehttp 161 "GET /static/ckeditor/ckeditor-init.js HTTP/1.1" 200 2100
+INFO 2021-09-07 22:46:41,213 basehttp 161 "GET /static/ckeditor/ckeditor/ckeditor.js HTTP/1.1" 200 691941
+INFO 2021-09-07 22:46:41,318 basehttp 161 "GET /static/ckeditor/ckeditor/config.js?t=I3I8 HTTP/1.1" 200 348
+INFO 2021-09-07 22:46:41,341 basehttp 161 "GET /static/ckeditor/ckeditor/lang/zh-cn.js?t=I3I8 HTTP/1.1" 200 18822
+INFO 2021-09-07 22:46:41,341 basehttp 161 "GET /static/ckeditor/ckeditor/skins/moono-lisa/editor.css?t=I3I8 HTTP/1.1" 200 46921
+INFO 2021-09-07 22:46:41,380 basehttp 161 "GET /static/ckeditor/ckeditor/styles.js?t=I3I8 HTTP/1.1" 200 5583
+INFO 2021-09-07 22:46:41,411 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/tableselection/styles/tableselection.css HTTP/1.1" 200 1082
+INFO 2021-09-07 22:46:41,412 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css HTTP/1.1" 200 1306
+INFO 2021-09-07 22:46:41,412 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css HTTP/1.1" 200 381
+INFO 2021-09-07 22:46:41,412 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/scayt/dialogs/dialog.css HTTP/1.1" 200 419
+INFO 2021-09-07 22:46:41,413 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/copyformatting/styles/copyformatting.css HTTP/1.1" 200 1513
+INFO 2021-09-07 22:46:41,452 basehttp 161 "GET /static/ckeditor/ckeditor/skins/moono-lisa/icons.png?t=95e5d83 HTTP/1.1" 200 12421
+INFO 2021-09-07 22:46:41,475 basehttp 161 "GET /static/ckeditor/ckeditor/contents.css?t=I3I8 HTTP/1.1" 200 2954
