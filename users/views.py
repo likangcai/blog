@@ -382,7 +382,11 @@ class UserCenterView(LoginRequiredMixin, View):
         # 5.返回响应
         return response
 
-
-class WriteBlogView(View):
+from home.models import ArticleCategory
+class WriteBlogView(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'write_blog.html')
+        categories = ArticleCategory.objects.all()
+        context = {
+            'categories':categories
+        }
+        return render(request, 'write_blog.html', context=context)
