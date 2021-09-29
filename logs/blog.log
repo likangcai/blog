@@ -33,3 +33,146 @@ INFO 2021-09-07 22:46:41,412 basehttp 161 "GET /static/ckeditor/ckeditor/plugins
 INFO 2021-09-07 22:46:41,413 basehttp 161 "GET /static/ckeditor/ckeditor/plugins/copyformatting/styles/copyformatting.css HTTP/1.1" 200 1513
 INFO 2021-09-07 22:46:41,452 basehttp 161 "GET /static/ckeditor/ckeditor/skins/moono-lisa/icons.png?t=95e5d83 HTTP/1.1" 200 12421
 INFO 2021-09-07 22:46:41,475 basehttp 161 "GET /static/ckeditor/ckeditor/contents.css?t=I3I8 HTTP/1.1" 200 2954
+INFO 2021-09-07 23:40:42,454 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-07 23:41:36,075 basehttp 161 "GET / HTTP/1.1" 200 12746
+INFO 2021-09-07 23:41:36,283 basehttp 161 "GET /static/md_css/monokai.css HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,288 basehttp 161 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,291 basehttp 161 "GET /static/common/common.css HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,292 basehttp 161 "GET /static/common/jquery.pagination.css HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,302 basehttp 161 "GET /static/js/vue-2.5.16.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,302 basehttp 161 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,302 basehttp 161 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,364 basehttp 161 "GET /static/js/host.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,366 basehttp 161 "GET /static/js/common.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,391 basehttp 161 "GET /static/img/1.jpg HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,392 basehttp 161 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:36,392 basehttp 161 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 304 0
+INFO 2021-09-07 23:41:42,689 basehttp 161 "GET /admin HTTP/1.1" 301 0
+INFO 2021-09-07 23:41:42,705 basehttp 161 "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-09-07 23:41:42,927 basehttp 161 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2369
+INFO 2021-09-07 23:41:43,005 basehttp 161 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2021-09-07 23:41:43,013 basehttp 161 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2021-09-07 23:41:43,024 basehttp 161 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2021-09-07 23:41:43,025 basehttp 161 "GET /static/admin/css/login.css HTTP/1.1" 200 939
+INFO 2021-09-07 23:41:43,036 basehttp 161 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+INFO 2021-09-07 23:41:43,051 basehttp 161 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2021-09-07 23:41:43,142 basehttp 161 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2021-09-07 23:41:43,152 basehttp 161 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2021-09-07 23:41:43,178 basehttp 161 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2021-09-07 23:41:56,484 basehttp 161 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2534
+INFO 2021-09-07 23:42:06,704 basehttp 161 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 2528
+INFO 2021-09-29 17:10:26,740 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:10:53,214 basehttp 161 "GET / HTTP/1.1" 200 12746
+INFO 2021-09-29 17:10:53,313 basehttp 161 "GET /static/common/common.css HTTP/1.1" 200 381
+INFO 2021-09-29 17:10:53,313 basehttp 161 "GET /static/common/jquery.pagination.css HTTP/1.1" 200 549
+INFO 2021-09-29 17:10:53,346 basehttp 161 "GET /static/md_css/monokai.css HTTP/1.1" 200 4118
+INFO 2021-09-29 17:10:53,371 basehttp 161 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2021-09-29 17:10:53,372 basehttp 161 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97168
+INFO 2021-09-29 17:10:53,373 basehttp 161 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 200 12949
+INFO 2021-09-29 17:10:53,388 basehttp 161 "GET /static/js/vue-2.5.16.js HTTP/1.1" 200 300254
+INFO 2021-09-29 17:10:53,470 basehttp 161 "GET /static/js/host.js HTTP/1.1" 200 35
+INFO 2021-09-29 17:10:53,494 basehttp 161 "GET /static/js/common.js HTTP/1.1" 200 919
+INFO 2021-09-29 17:10:53,501 basehttp 161 "GET /static/js/index.js HTTP/1.1" 200 552
+INFO 2021-09-29 17:10:53,526 basehttp 161 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 200 2935
+INFO 2021-09-29 17:10:53,547 basehttp 161 "GET /static/img/1.jpg HTTP/1.1" 200 78682
+WARNING 2021-09-29 17:10:55,504 log 224 Not Found: /favicon.ico
+WARNING 2021-09-29 17:10:55,507 basehttp 161 "GET /favicon.ico HTTP/1.1" 404 3779
+INFO 2021-09-29 17:11:03,659 basehttp 161 "GET /admin HTTP/1.1" 301 0
+INFO 2021-09-29 17:11:03,668 basehttp 161 "GET /admin/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:11:03,886 basehttp 161 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2211
+INFO 2021-09-29 17:11:04,008 basehttp 161 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 1360
+INFO 2021-09-29 17:11:04,009 basehttp 161 "GET /static/admin/css/login.css HTTP/1.1" 200 939
+INFO 2021-09-29 17:11:04,016 basehttp 161 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+INFO 2021-09-29 17:11:04,028 basehttp 161 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2271
+INFO 2021-09-29 17:11:04,045 basehttp 161 "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+INFO 2021-09-29 17:11:04,053 basehttp 161 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2021-09-29 17:11:04,153 basehttp 161 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2021-09-29 17:11:04,168 basehttp 161 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2021-09-29 17:14:13,409 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:14:21,404 basehttp 161 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2212
+INFO 2021-09-29 17:14:58,289 autoreload 251 H:\github\myDjango\blog\blog\blog\settings.py changed, reloading.
+INFO 2021-09-29 17:15:00,719 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:15:10,536 autoreload 251 H:\github\myDjango\blog\blog\blog\settings.py changed, reloading.
+INFO 2021-09-29 17:15:14,191 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:16:06,993 autoreload 251 H:\github\myDjango\blog\blog\users\models.py changed, reloading.
+INFO 2021-09-29 17:16:09,776 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:16:20,913 autoreload 251 H:\github\myDjango\blog\blog\users\models.py changed, reloading.
+INFO 2021-09-29 17:16:23,657 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:16:48,916 autoreload 251 H:\github\myDjango\blog\blog\users\models.py changed, reloading.
+INFO 2021-09-29 17:16:51,856 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:21:24,084 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:23:08,996 basehttp 161 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2212
+INFO 2021-09-29 17:23:22,985 basehttp 161 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:23:23,184 basehttp 161 "GET /admin/ HTTP/1.1" 200 2884
+INFO 2021-09-29 17:23:23,346 basehttp 161 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 380
+INFO 2021-09-29 17:23:23,409 basehttp 161 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2021-09-29 17:23:23,410 basehttp 161 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2021-09-29 17:23:23,456 basehttp 161 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2021-09-29 17:25:03,263 autoreload 251 H:\github\myDjango\blog\blog\home\admin.py changed, reloading.
+INFO 2021-09-29 17:25:06,200 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:25:10,378 autoreload 251 H:\github\myDjango\blog\blog\home\admin.py changed, reloading.
+INFO 2021-09-29 17:25:14,015 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:25:20,435 autoreload 251 H:\github\myDjango\blog\blog\home\admin.py changed, reloading.
+INFO 2021-09-29 17:25:23,229 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:26:05,160 autoreload 251 H:\github\myDjango\blog\blog\home\admin.py changed, reloading.
+INFO 2021-09-29 17:26:07,715 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:26:17,465 autoreload 637 Watching for file changes with StatReloader
+INFO 2021-09-29 17:26:55,347 basehttp 161 "GET /admin/ HTTP/1.1" 200 3565
+INFO 2021-09-29 17:27:10,039 basehttp 161 "GET /admin/home/articlecategory/ HTTP/1.1" 200 4701
+INFO 2021-09-29 17:27:10,270 basehttp 161 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2021-09-29 17:27:10,360 basehttp 161 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+INFO 2021-09-29 17:27:10,429 basehttp 161 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2021-09-29 17:27:10,429 basehttp 161 "GET /static/admin/js/actions.js HTTP/1.1" 200 7664
+INFO 2021-09-29 17:27:10,439 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:27:10,458 basehttp 161 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2021-09-29 17:27:10,459 basehttp 161 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+INFO 2021-09-29 17:27:10,474 basehttp 161 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2021-09-29 17:27:10,491 basehttp 161 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2021-09-29 17:27:10,522 basehttp 161 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+INFO 2021-09-29 17:27:10,649 basehttp 161 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2021-09-29 17:27:14,231 basehttp 161 "GET /admin/ HTTP/1.1" 200 3565
+INFO 2021-09-29 17:27:29,881 basehttp 161 "GET /admin/home/articlecategory/ HTTP/1.1" 200 4701
+INFO 2021-09-29 17:27:30,082 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:27:55,796 basehttp 161 "GET /admin/home/articlecategory/ HTTP/1.1" 200 4701
+INFO 2021-09-29 17:27:55,994 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:27:58,807 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6345
+INFO 2021-09-29 17:27:59,100 basehttp 161 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 492
+INFO 2021-09-29 17:27:59,106 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:27:59,205 basehttp 161 "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+INFO 2021-09-29 17:27:59,234 basehttp 161 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+INFO 2021-09-29 17:27:59,262 basehttp 161 "GET /static/admin/js/calendar.js HTTP/1.1" 200 8466
+INFO 2021-09-29 17:27:59,277 basehttp 161 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19634
+INFO 2021-09-29 17:27:59,294 basehttp 161 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2021-09-29 17:27:59,442 basehttp 161 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2021-09-29 17:27:59,475 basehttp 161 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2021-09-29 17:28:11,598 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:11,801 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6595
+INFO 2021-09-29 17:28:12,256 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:28:12,332 basehttp 161 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2021-09-29 17:28:19,319 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:19,476 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6593
+INFO 2021-09-29 17:28:19,704 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:28:32,023 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:32,224 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6593
+INFO 2021-09-29 17:28:32,448 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:28:37,052 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:37,393 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6592
+INFO 2021-09-29 17:28:37,679 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:28:42,683 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:42,945 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6591
+INFO 2021-09-29 17:28:43,422 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:28:50,505 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:28:50,740 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6595
+INFO 2021-09-29 17:28:50,923 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:29:01,268 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:29:01,504 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6593
+INFO 2021-09-29 17:29:01,788 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:29:36,958 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:29:37,128 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6599
+INFO 2021-09-29 17:29:37,223 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:30:17,456 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:30:17,651 basehttp 161 "GET /admin/home/articlecategory/add/ HTTP/1.1" 200 6595
+INFO 2021-09-29 17:30:17,808 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
+INFO 2021-09-29 17:30:22,809 basehttp 161 "POST /admin/home/articlecategory/add/ HTTP/1.1" 302 0
+INFO 2021-09-29 17:30:22,993 basehttp 161 "GET /admin/home/articlecategory/ HTTP/1.1" 200 7987
+INFO 2021-09-29 17:30:23,147 basehttp 161 "GET /admin/jsi18n/ HTTP/1.1" 200 8398
